@@ -1,0 +1,11 @@
+function sendEmails() {
+  var sheet = SpreadsheetApp.getActiveSheet();
+
+  var file = DriveApp.getFileById('1Z5lUkXkocle-uVwQCVVg42dIG81GXVbPg3Qn-ZZ2o10');
+
+  GmailApp.sendEmail('people@analyticahouse.com',
+                     'Tuncer GÜREL Analytica House Exam',
+                     'Hi, Case Study is completed. I added urls, name, price, in stock, out of stock and prodcut code columns. Also upload to my Github page. https://github.com/tuncergurel. Best Regards ',
+                     {attachments: [file.getAs(MimeType.PDF)] });
+
+}
